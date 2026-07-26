@@ -1,0 +1,115 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradient -->
+    <radialGradient id="bgGlow" cx="50%" cy="50%" r="65%">
+      <stop offset="0%" stop-color="#111827" />
+      <stop offset="60%" stop-color="#07090e" />
+      <stop offset="100%" stop-color="#030407" />
+    </radialGradient>
+
+    <!-- Fury Energy Gradient (Fire/Neon Pink to Electric Cyan) -->
+    <linearGradient id="furyGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ff0055" />
+      <stop offset="45%" stop-color="#a855f7" />
+      <stop offset="100%" stop-color="#00f3ff" />
+    </linearGradient>
+
+    <!-- Logic Core Gradient (Cyan to Deep Blue to Violet) -->
+    <linearGradient id="logicGradient" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00f3ff" />
+      <stop offset="50%" stop-color="#3b82f6" />
+      <stop offset="100%" stop-color="#8b5cf6" />
+    </linearGradient>
+
+    <!-- Metallic Gold/Amber Accents -->
+    <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fbbf24" />
+      <stop offset="100%" stop-color="#f59e0b" />
+    </linearGradient>
+
+    <!-- Neon Glow Filter -->
+    <filter id="neonGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="10" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <filter id="subtleShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#00f3ff" flood-opacity="0.25" />
+    </filter>
+  </defs>
+
+  <!-- Background Squircle Container -->
+  <rect width="512" height="512" rx="120" fill="url(#bgGlow)" stroke="#1e293b" stroke-width="4" />
+  
+  <!-- Subtle Outer Cyber Circuit Ring -->
+  <circle cx="256" cy="256" r="215" fill="none" stroke="url(#furyGradient)" stroke-width="3" stroke-dasharray="16 12" opacity="0.35" />
+  <circle cx="256" cy="256" r="190" fill="none" stroke="#3b82f6" stroke-width="1.5" opacity="0.2" />
+
+  <!-- Outer Octagonal Shield Frame -->
+  <polygon points="256,56 426,126 426,386 256,456 86,386 86,126" 
+           fill="none" 
+           stroke="url(#logicGradient)" 
+           stroke-width="8" 
+           stroke-linejoin="round"
+           filter="url(#neonGlow)" />
+
+  <polygon points="256,76 410,138 410,374 256,436 102,374 102,138" 
+           fill="#0a0d18" 
+           fill-opacity="0.8"
+           stroke="#1e293b" 
+           stroke-width="3" />
+
+  <!-- Circuit Trace Lines & Logic Nodes -->
+  <g stroke="url(#furyGradient)" stroke-width="3" stroke-linecap="round" opacity="0.8">
+    <!-- Top left trace -->
+    <path d="M 102 138 L 170 200 H 200" fill="none" />
+    <circle cx="200" cy="200" r="4" fill="#00f3ff" />
+
+    <!-- Top right trace -->
+    <path d="M 410 138 L 342 200 H 312" fill="none" />
+    <circle cx="312" cy="200" r="4" fill="#ff0055" />
+
+    <!-- Bottom left trace -->
+    <path d="M 102 374 L 170 312 H 200" fill="none" />
+    <circle cx="200" cy="312" r="4" fill="#3b82f6" />
+
+    <!-- Bottom right trace -->
+    <path d="M 410 374 L 342 312 H 312" fill="none" />
+    <circle cx="312" cy="312" r="4" fill="#a855f7" />
+  </g>
+
+  <!-- Central Emblem: Stylized "FuryLogic" Bolt & 'F' Monogram -->
+  <g filter="url(#subtleShadow)">
+    <!-- Main Angular 'F' & Lightning Bolt Structure -->
+    <!-- Top Horizontal Bar -->
+    <polygon points="175,150 345,150 325,190 220,190 205,225 175,225" 
+             fill="url(#furyGradient)" />
+
+    <!-- Middle Horizontal Bar & Logic Node Connector -->
+    <polygon points="195,245 305,245 285,285 208,285" 
+             fill="url(#logicGradient)" />
+
+    <!-- Vertical / Diagonal Lightning Shaft of 'F' -->
+    <polygon points="175,150 220,150 170,365 130,365" 
+             fill="url(#furyGradient)" />
+
+    <!-- Sharp Lightning Return Edge (Fury Energy Spike) -->
+    <polygon points="170,365 240,295 210,295 275,200 240,200 280,150" 
+             fill="url(#goldGradient)" 
+             opacity="0.9" />
+  </g>
+
+  <!-- Glowing Quantum Core Points -->
+  <circle cx="256" cy="256" r="10" fill="#ffffff" filter="url(#neonGlow)" />
+  <circle cx="256" cy="256" r="5" fill="#00f3ff" />
+
+  <!-- Corner Accents / Decorative Dots -->
+  <circle cx="256" cy="90" r="5" fill="#00f3ff" />
+  <circle cx="256" cy="422" r="5" fill="#ff0055" />
+  <circle cx="120" cy="256" r="5" fill="#3b82f6" />
+  <circle cx="392" cy="256" r="5" fill="#a855f7" />
+</svg>

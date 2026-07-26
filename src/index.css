@@ -1,0 +1,52 @@
+@import "tailwindcss";
+
+@layer utilities {
+  .grid-bg {
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+                      linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+  .grid-bg-dense {
+    background-image: linear-gradient(to right, rgba(0, 255, 128, 0.08) 1px, transparent 1px),
+                      linear-gradient(to bottom, rgba(0, 255, 128, 0.08) 1px, transparent 1px);
+    background-size: 20px 20px;
+  }
+  .card-shadow {
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(12, 12, 15, 0.85);
+    backdrop-filter: blur(12px);
+  }
+  .text-glow {
+    text-shadow: 0 0 12px rgba(0, 255, 128, 0.5);
+  }
+  .text-glow-blue {
+    text-shadow: 0 0 12px rgba(56, 189, 248, 0.5);
+  }
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #050507;
+  color: #f3f4f6;
+  font-family: 'Helvetica Neue', system-ui, -apple-system, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #050507;
+}
+::-webkit-scrollbar-thumb {
+  background: #27272a;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #10b981;
+}
+
