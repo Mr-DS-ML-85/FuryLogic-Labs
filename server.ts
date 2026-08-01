@@ -83,6 +83,15 @@ Be highly technical, concise, clear, and enthusiastic about systems performance,
     res.json({ status: "online", firm: "FuryLogic Labs", domain: "furylogic.com" });
   });
 
+  // Static SEO files must be served before the SPA catch-all
+  app.get("/sitemap.xml", (req, res) => {
+    res.sendFile(path.join(distPath, "sitemap.xml"));
+  });
+
+  app.get("/robots.txt", (req, res) => {
+    res.sendFile(path.join(distPath, "robots.txt"));
+  });
+
   // Vite middleware for development
   if (process.env.NODE_ENV !== "production") {
     const vite = await createViteServer({
